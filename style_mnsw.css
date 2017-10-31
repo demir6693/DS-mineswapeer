@@ -64,7 +64,16 @@ h1 {
 	position:relative;
 	color: white;
 	top: -23px;
-    left: 1100px;
+    left: 1150px;
     right: 0px;
     bottom: -191px;
+}
+
+.ukupno_bombi {
+      position: relative;
+      color: white;
+      top: 115px;
+      left: 500px;
+      right: 0px;
+      bottom: -191px;
 }
