@@ -311,7 +311,8 @@ echo "</table>";
                             for($i=1000; $i<1010; $i++)
 														{
 															document.getElementById($i).onclick = function kraj() {
-															alert('kraj');
+															alert('BOMBA !!!'); 
+															window.location.reload();
 														  }
 														}
 
