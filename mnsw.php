@@ -14,6 +14,7 @@
 
 
 <?php
+		echo "<h1 class='ukupno_bombi'>Bombe: 10</h1>";
     echo "<form action='#' method='POST' >";
     echo "<input type='submit' class='button' id='play_button' value='Replay' name='restart'/></form>";
 
@@ -311,7 +312,7 @@ echo "</table>";
                             for($i=1000; $i<1010; $i++)
 														{
 															document.getElementById($i).onclick = function kraj() {
-															alert('BOMBA !!!'); 
+															alert('BOMBA !!!');
 															window.location.reload();
 														  }
 														}
