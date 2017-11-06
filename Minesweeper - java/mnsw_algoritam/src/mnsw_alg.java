@@ -1,27 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace mineswepper_alg
-{
-    class Program
+import java.util.Random;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author demir
+ */
+public class mnsw_alg {
+    
+    public int[][] matrix(int[][] ms1)
     {
-        static void Main(string[] args)
-        {
-            int[,] msw = new int[9, 9];
-            int brojac = 0;
-            Random rnd = new Random();
-
-            while (brojac != 10)
+        int[][] msw = new int[ms1.length][ms1.length];
+        int count = 0;
+        Random rnd = new Random();
+        
+        while (count != 10)
             {
-                brojac = 0;
+                count = 0;
                 for (int i = 0; i < 9; i++)
                 {
                     for (int j = 0; j < 9; j++)
                     {
-                        msw[i, j] = 0;
+                        msw[i][j] = 0;
                     }
                 }
 
@@ -29,9 +34,9 @@ namespace mineswepper_alg
 
                 for (int i = 0; i < 10; i++)
                 {
-                    int bm1 = rnd.Next(0, 9);
-                    int bm2 = rnd.Next(0, 9);
-                    msw[bm1, bm2] = 7;
+                    int bm1 = rnd.nextInt(9);
+                    int bm2 = rnd.nextInt(9);
+                    msw[bm1][bm2] = 7;
                 }
 
                 
@@ -41,21 +46,21 @@ namespace mineswepper_alg
                     for(int j = 0; j < 9; j++)
                     {
                         int num = 0;
-                        if (msw[i, j] != 7)
+                        if (msw[i][j] != 7)
                         {
                             if (i == 0 && j == 0)
                             {
-                                if (msw[i, j + 1] == 7)
+                                if (msw[i][j + 1] == 7)
                                 {
                                     num++;
                                 }
 
-                                if (msw[i + 1, j] == 7)
+                                if (msw[i + 1][j] == 7)
                                 {
                                     num++;
                                 }
 
-                                if (msw[i + 1, j + 1] == 7)
+                                if (msw[i + 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
@@ -65,15 +70,15 @@ namespace mineswepper_alg
                             else if (i == 0 && j == 8)
                             {
 
-                                if (msw[i, j - 1] == 7)
+                                if (msw[i][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j - 1] == 7)
+                                if (msw[i + 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j] == 7)
+                                if (msw[i + 1][j] == 7)
                                 {
                                     num++;
                                 }
@@ -83,15 +88,15 @@ namespace mineswepper_alg
                             else if (i == 8 && j == 0)
                             {
 
-                                if (msw[i - 1, j] == 7)
+                                if (msw[i - 1][j] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j + 1] == 7)
+                                if (msw[i - 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j + 1] == 7)
+                                if (msw[i][j + 1] == 7)
                                 {
                                     num++;
                                 }
@@ -101,15 +106,15 @@ namespace mineswepper_alg
                             else if (i == 8 && j == 8)
                             {
 
-                                if (msw[i, j - 1] == 7)
+                                if (msw[i][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j - 1] == 7)
+                                if (msw[i - 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j] == 7)
+                                if (msw[i - 1][j] == 7)
                                 {
                                     num++;
                                 }
@@ -119,23 +124,23 @@ namespace mineswepper_alg
                             else if (j == 0)
                             {
 
-                                if (msw[i - 1, j] == 7)
+                                if (msw[i - 1][j] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j + 1] == 7)
+                                if (msw[i - 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j + 1] == 7)
+                                if (msw[i][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j + 1] == 7)
+                                if (msw[i + 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j] == 7)
+                                if (msw[i + 1][j] == 7)
                                 {
                                     num++;
                                 }
@@ -145,23 +150,23 @@ namespace mineswepper_alg
                             else if (i == 0)
                             {
 
-                                if (msw[i, j - 1] == 7)
+                                if (msw[i][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j - 1] == 7)
+                                if (msw[i + 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j] == 7)
+                                if (msw[i + 1][j] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j + 1] == 7)
+                                if (msw[i][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j + 1] == 7)
+                                if (msw[i + 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
@@ -171,23 +176,23 @@ namespace mineswepper_alg
                             else if (i == 8)
                             {
 
-                                if (msw[i - 1, j - 1] == 7)
+                                if (msw[i - 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j] == 7)
+                                if (msw[i - 1][j] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j + 1] == 7)
+                                if (msw[i - 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j - 1] == 7)
+                                if (msw[i][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j + 1] == 7)
+                                if (msw[i][j + 1] == 7)
                                 {
                                     num++;
                                 }
@@ -198,23 +203,23 @@ namespace mineswepper_alg
                             {
 
                                
-                                if (msw[i - 1, j - 1] == 7)
+                                if (msw[i - 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j] == 7)
+                                if (msw[i - 1][j] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j - 1] == 7)
+                                if (msw[i][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j - 1] == 7)
+                                if (msw[i + 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j] == 7)
+                                if (msw[i + 1][j] == 7)
                                 {
                                     num++;
                                 }
@@ -222,40 +227,40 @@ namespace mineswepper_alg
                             else
                             {
 
-                                if (msw[i - 1, j - 1] == 7)
+                                if (msw[i - 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j] == 7)
+                                if (msw[i - 1][j] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i - 1, j + 1] == 7)
+                                if (msw[i - 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j - 1] == 7)
+                                if (msw[i][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i, j + 1] == 7)
+                                if (msw[i][j + 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j - 1] == 7)
+                                if (msw[i + 1][j - 1] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j] == 7)
+                                if (msw[i + 1][j] == 7)
                                 {
                                     num++;
                                 }
-                                if (msw[i + 1, j + 1] == 7)
+                                if (msw[i + 1][j + 1] == 7)
                                 {
                                     num++;
                                 }
                             }
-                            msw[i, j] = num;
+                            msw[i][j] = num;
                         }
                     }
                 }
@@ -265,34 +270,16 @@ namespace mineswepper_alg
                 {
                     for (int j = 0; j < 9; j++)
                     {
-                        if(msw[i,j] == 7)
+                        if(msw[i][j] == 7)
                         {
-                        brojac++;
+                        count++;
                         }
                     }
                 }
                 
             }
-            for (int i = 0; i < 9; i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    Console.Write(string.Format("{0} ", msw[i, j]));
-                }
-                Console.WriteLine(Environment.NewLine);
-            }
-            Console.ReadLine();
-        }    
-     }   
- }
-          
-
-            
-
-                   
-                               
-                                
-                               
-                            
-                        
-            
+        
+        return msw;
+    }
+    
+}
