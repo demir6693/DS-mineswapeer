@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 #hide
 {
   display:none;
@@ -8,6 +9,8 @@
 {
   display:true;
 }
+=======
+>>>>>>> 545af862d0d068b2d42df931c13353f998be55b6
 body {
 background-color: #2F3235;
 }
@@ -73,7 +76,23 @@ h1 {
 	position:relative;
 	color: white;
 	top: -23px;
+<<<<<<< HEAD
     left: 1100px;
     right: 0px;
     bottom: -191px;
 }
+=======
+    left: 1150px;
+    right: 0px;
+    bottom: -191px;
+}
+
+.ukupno_bombi {
+      position: relative;
+      color: white;
+      top: 115px;
+      left: 500px;
+      right: 0px;
+      bottom: -191px;
+}
+>>>>>>> 545af862d0d068b2d42df931c13353f998be55b6
